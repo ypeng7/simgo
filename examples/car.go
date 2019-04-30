@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/bgmerrell/simgo"
+	"github.com/ypeng7/simgo"
 )
 
 // simpy example:

@@ -3,7 +3,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/bgmerrell/simgo"
+	"github.com/ypeng7/simgo"
 )
 
 // Python example
