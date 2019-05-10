@@ -104,7 +104,7 @@ func NewEvent(env *Environment) *Event {
 // errors.
 func (e *Event) Succeed(val interface{}) (*Event, error) {
 	if !e.Value.isPending {
-		return e, errgo.Newf("%s has already been triggered", e)
+		return e, errgo.Newf("%v has already been triggered", e)
 	}
 	e.Value.Set(val)
 	e.env.Schedule(e, PriorityNormal, 0)
@@ -116,7 +116,7 @@ func (e *Event) Succeed(val interface{}) (*Event, error) {
 // instance is returned along with any errors.
 func (e *Event) Fail(eventValue *EventValue) (*Event, error) {
 	if !e.Value.isPending {
-		return nil, errgo.Newf("%s has already been triggered", e)
+		return nil, errgo.Newf("%v has already been triggered", e)
 	}
 
 	errVal, err := eventValue.Get()
